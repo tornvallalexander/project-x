@@ -4,6 +4,10 @@ module.exports = {
     "./components/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      display: ["Questrial"],
+      body: ["Questrial"],
+    },
     extend: {
       colors: {
         transparent: "transparent",

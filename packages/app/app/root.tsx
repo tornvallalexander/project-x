@@ -12,6 +12,9 @@ import styles from "./styles/app.css"
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    { rel: "preconnect", href: "https://fonts.gstatic.com" },
+    { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Questrial&display=swap" },
   ]
 }
 

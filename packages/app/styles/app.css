@@ -8,7 +8,7 @@
     }
 
     body {
-        @apply bg-black tracking-tight text-gray-50 transition-colors;
+        @apply bg-black tracking-tight text-gray-50 transition-colors font-body;
     }
 
     :root {
