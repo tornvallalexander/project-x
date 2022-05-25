@@ -20,7 +20,7 @@ const sizes = {
 const common = "disabled:opacity-60 ring-offset-2"
 
 const variants = {
-  primary: `bg-primary text-white active:bg-primary-900 hover:bg-primary ring-primary ${common}`,
+  primary: `bg-primary text-white active:bg-transparent hover:bg-primary ring-primary ${common}`,
   secondary: `bg-primary-50 text-primary hover:bg-primary-100 active:bg-primary-50 ring-primary ${common}`,
 }
 
@@ -62,21 +62,18 @@ const Button = React.forwardRef<
         tracking-tight
         ${sizes[size]}
         ${variants[variant]}
+        ${className}
         `, {
           "w-full": fullWidth,
-          [className]: className,
         }
       )}
     >
-        <span
-          className={clsx('flex items-center pointer-events-none', {
-            'opacity-0': loading,
-          })}>
-          {loading && (
-            <span className="-ml-2 mr-2 items-center" />
-          )}
-          {children}
-        </span>
+      <span
+        className={clsx('flex items-center pointer-events-none', {
+          'opacity-0': loading,
+        })}>
+        {children}
+      </span>
     </button>
   )
 })
