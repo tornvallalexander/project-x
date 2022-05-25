@@ -1,5 +1,5 @@
 import * as React from "react"
-import {Button} from "~/components/button";
+import {ArrowButton, Button} from "~/components/button";
 import {H1} from "~/components/typography";
 import {Main} from "~/components/main";
 import {Spacer} from "~/components/spacer";
@@ -14,6 +14,10 @@ export default function Page() {
         <Button size="lg">
           Be part of Project X
         </Button>
+        <Spacer />
+        <ArrowButton size="lg">
+          Be part of Project X
+        </ArrowButton>
       </Main>
       <Spacer size="xs" />
     </div>

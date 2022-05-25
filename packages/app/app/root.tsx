@@ -47,6 +47,7 @@ export default function App() {
       <body>
         <Outlet />
         <ScrollRestoration />
+        <Scripts />
         <script
           dangerouslySetInnerHTML={{
             __html: `window.ENV = ${JSON.stringify(
@@ -54,7 +55,6 @@ export default function App() {
             )}`,
           }}
         />
-        <Scripts />
         <LiveReload />
       </body>
     </html>
