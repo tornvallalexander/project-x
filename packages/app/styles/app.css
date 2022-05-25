@@ -8,10 +8,13 @@
     }
 
     body {
-        @apply bg-black tracking-tight text-gray-50 transition-colors font-body;
+        @apply bg-midnight tracking-tight text-gray-50 transition-colors font-body;
     }
 
     :root {
+        /* Midnight */
+        --color-midnight: #101026;
+
         /* Primary */
         --color-primary-500: #8e05c2;
         --color-primary-900: #332240;
