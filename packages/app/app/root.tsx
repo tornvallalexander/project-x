@@ -10,7 +10,9 @@ import {
 import styles from "./styles/app.css"
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }]
+  return [
+    { rel: "stylesheet", href: styles },
+  ]
 }
 
 export const meta: MetaFunction = () => ({

@@ -1,3 +1,5 @@
+import {Button} from "../../components/button";
+
 export default function Index() {
   return (
     <div>
@@ -26,6 +28,9 @@ export default function Index() {
             Remix Docs
           </a>
         </li>
+        <Button>
+          test
+        </Button>
       </ul>
     </div>
   );
