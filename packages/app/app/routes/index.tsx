@@ -1,3 +1,4 @@
+import * as React from "react"
 import {Button} from "~/components/button";
 import {H1} from "~/components/typography";
 import {Main} from "~/components/main";
