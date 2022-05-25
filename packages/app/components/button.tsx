@@ -11,10 +11,10 @@ interface Props {
 }
 
 const sizes = {
-  xs: "h-8 px-3 text-sm",
-  sm: "h-8 px-3 text-sm",
-  md: "h-10 px-5 text-md",
-  lg: "h-12 px-6 text-md",
+  xs: "h-8 px-3 text-md",
+  sm: "h-8 px-3 text-md",
+  md: "h-10 px-5 text-lg",
+  lg: "h-12 px-6 text-lg",
 }
 
 const common = "disabled:opacity-60 ring-offset-2"
@@ -73,7 +73,7 @@ const Button = React.forwardRef<
             'opacity-0': loading,
           })}>
           {loading && (
-            <span className="-ml-2 mr-2 items-center"></span>
+            <span className="-ml-2 mr-2 items-center" />
           )}
           {children}
         </span>

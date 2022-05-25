@@ -1,9 +1,10 @@
 import {Button} from "../../components/button";
+import {H1} from "../../components/typography";
 
 export default function Index() {
   return (
     <div>
-      <h1>Welcome to Remix</h1>
+      <H1>Welcome to Remix</H1>
       <ul>
         <li>
           <a
