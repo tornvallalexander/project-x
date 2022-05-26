@@ -1,7 +1,8 @@
 import React, {PropsWithChildren, ReactNode} from "react"
 import clsx from "clsx";
-import {motion, Variants} from "framer-motion";
+import {motion} from "framer-motion";
 import {ArrowNarrowRightIcon} from "@heroicons/react/outline";
+import {arrowVariants, textVariants} from "~/animations/variants/button";
 
 interface Props {
   variant?: keyof typeof variants;
@@ -86,26 +87,6 @@ const Button = React.forwardRef<
     </button>
   )
 })
-
-const arrowVariants: Variants = {
-  hover: {
-    opacity: 1,
-    x: 15,
-  },
-  initial: {
-    opacity: 0,
-    x: 0,
-  }
-}
-
-const textVariants: Variants = {
-  hover: {
-    x: -15,
-  },
-  initial: {
-    x: 0,
-  }
-}
 
 const ArrowButton = (props: PropsWithChildren<Props & JSX.IntrinsicElements["button"]>) => {
   const {
