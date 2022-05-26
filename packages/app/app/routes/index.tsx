@@ -15,7 +15,10 @@ export default function Page() {
           Be part of Project X
         </Button>
         <Spacer />
-        <ArrowButton size="lg">
+        <ArrowButton size="lg" className="mr-2">
+          Be part of Project X
+        </ArrowButton>
+        <ArrowButton size="lg" variant="outline">
           Be part of Project X
         </ArrowButton>
       </Main>

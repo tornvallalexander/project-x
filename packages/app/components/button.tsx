@@ -19,11 +19,13 @@ const sizes = {
   lg: "h-12 px-6 text-lg",
 }
 
-const common = "disabled:opacity-60 ring-offset-2"
+const common = "disabled:opacity-60"
 
 const variants = {
   primary: `bg-primary text-white active:bg-transparent hover:bg-primary ring-primary ${common}`,
   secondary: `bg-primary-50 text-primary hover:bg-primary-100 active:bg-primary-50 ring-primary ${common}`,
+  ghost: `bg-transparent text-white active:bg-primary disabled:text-gray-500`,
+  outline: `bg-transparent text-white border border-white active:border-none disabled:text-gray disabled:border-gray`
 }
 
 const Button = React.forwardRef<
@@ -84,7 +86,6 @@ const Button = React.forwardRef<
     </button>
   )
 })
-
 
 const arrowVariants: Variants = {
   hover: {
