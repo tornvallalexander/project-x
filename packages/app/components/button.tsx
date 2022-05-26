@@ -146,4 +146,7 @@ const ArrowButton = (props: PropsWithChildren<Props & JSX.IntrinsicElements["but
   )
 }
 
-export {Button, ArrowButton}
+export {
+  Button,
+  ArrowButton,
+}
