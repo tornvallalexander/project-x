@@ -1,5 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
+const { saveUserFollowers } = require("../controllers/database.controller");
 
 const scrapeFollowerInformation = async (username: string) => {
   const { data } = await axios.get(`https://github.com/${username}`);
@@ -21,42 +22,50 @@ const scrapeFollowerInformation = async (username: string) => {
   return { name: name, bio: bio };
 };
 
-export const scrapeFollowers = async (username: string) => {
-  const { data } = await axios.get(
-    `https://github.com/${username}?tab=followers`
-  );
-  const $ = cheerio.load(data);
-  const listItemsFollowers = $(".d-table");
-  let followers: any = [];
+export const scrapeFollowers = async (req: any, res: any) => {
+  const { username } = req.query;
 
-  await listItemsFollowers.each((idx: any, followerContainer: any) => {
-    $(followerContainer)
-      .children(".d-table-cell")
-      .each((idx: any, informationContainer: any) => {
-        $(informationContainer)
-          .children(".d-inline-block")
-          .each((idx: any, namesContainer: any) => {
-            followers.push(
-              $(namesContainer)
-                .children(".Link--secondary")
-                .text()
-                .replace(/\s/g, "")
-                .trim()
-            );
-          });
-      });
-  });
+  if (username) {
+    const { data } = await axios.get(
+      `https://github.com/${username}?tab=followers`
+    );
+    const $ = cheerio.load(data);
+    const listItemsFollowers = $(".d-table");
+    let followers: any = [];
 
-  followers = await followers.filter(Boolean);
-  const followersInfo: any = [];
-
-  await followers.forEach((follower: any) => {
-    scrapeFollowerInformation(follower).then((info) => {
-      console.log(info);
-      followersInfo.push(info);
+    await listItemsFollowers.each((idx: any, followerContainer: any) => {
+      $(followerContainer)
+        .children(".d-table-cell")
+        .each((idx: any, informationContainer: any) => {
+          $(informationContainer)
+            .children(".d-inline-block")
+            .each((idx: any, namesContainer: any) => {
+              followers.push(
+                $(namesContainer)
+                  .children(".Link--secondary")
+                  .text()
+                  .replace(/\s/g, "")
+                  .trim()
+              );
+            });
+        });
     });
-  });
 
-  console.log(followersInfo);
-  return followersInfo;
+    followers = await followers.filter(Boolean);
+
+    let followersInfo: any = [];
+
+    await followers.forEach(async (follower: string) => {
+      await scrapeFollowerInformation(follower).then(async (info) => {
+        followersInfo = [...followersInfo, info];
+      });
+
+      if (followersInfo.length === followers.length) {
+        saveUserFollowers(username, followersInfo);
+        res.json(followersInfo);
+      }
+    });
+  } else {
+    res.json("Invalid username");
+  }
 };
