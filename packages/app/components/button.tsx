@@ -17,8 +17,8 @@ interface Props {
 const sizes = {
   xs: "h-8 px-3 text-md",
   sm: "h-8 px-3 text-md",
-  md: "h-10 px-5 text-lg",
-  lg: "h-10 px-6 text-lg",
+  md: "h-10 px-6 text-md",
+  lg: "h-12 px-6 text-lg",
 }
 
 const common = "disabled:opacity-60"

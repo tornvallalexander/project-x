@@ -65,13 +65,13 @@ interface ParagraphProps {
 }
 
 function Paragraph({
-  className = "text-lg",
+  className = "",
   prose = true,
   as = "p",
   ...rest
 }: ParagraphProps) {
   return createElement(as, {
-    className: clsx("max-w-full font-medium leading-tight", className, {
+    className: clsx("max-w-full font-medium leading-tight text-lg text-soft", className, {
       "prose prose-light": prose,
     }),
     ...rest
