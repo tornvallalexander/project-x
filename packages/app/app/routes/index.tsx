@@ -1,26 +1,29 @@
 import * as React from "react"
-import {ArrowButton, Button} from "~/components/button";
-import {H1} from "~/components/typography";
+import {Button} from "~/components/button";
+import {H1, Paragraph} from "~/components/typography";
 import {Main} from "~/components/main";
 import {Spacer} from "~/components/spacer";
+import {Project} from "~/app/utils/constants";
 
 export default function Page() {
   return (
     <div>
       <Spacer size="xs" />
       <Main>
-        <H1>Gathering the top 1% of developers</H1>
-        <Spacer size="3xs" />
-        <Button size="lg">
-          Be part of Project X
-        </Button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 p-4">
+          <div>
+            <H1>Connecting top talent with each other</H1>
+            <Paragraph className="mt-3 text-lg">
+              At {Project} we are building a community of top talent from all around the world. Our vision is to be
+              the place where top talent meets and create meaningful connections.
+            </Paragraph>
+            <Spacer size="3xs" />
+            <Button arrow>
+              Be part of {Project}
+            </Button>
+          </div>
+        </div>
         <Spacer />
-        <ArrowButton size="lg" className="mr-2">
-          Be part of Project X
-        </ArrowButton>
-        <ArrowButton size="lg" variant="outline">
-          Be part of Project X
-        </ArrowButton>
       </Main>
       <Spacer size="xs" />
     </div>

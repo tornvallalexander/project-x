@@ -14,6 +14,7 @@ module.exports = {
         transparent: "transparent",
         black: "var(--color-gray-800)",
         white: "var(--color-gray-50)",
+        soft: "var(--color-gray-200)",
         midnight: "var(--color-midnight)",
         primary: {
           DEFAULT: "var(--color-primary-500)",
