@@ -7,5 +7,5 @@ const port = 4000;
 app.get("/scrape", scrapeFollowers);
 
 app.listen(port, () => {
-  console.log(`app listening on port ${port}`);
+  console.log(`app listening on ${port}`);
 });
