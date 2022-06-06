@@ -69,3 +69,5 @@ export const scrapeFollowers = async (req: any, res: any) => {
     res.json("Invalid username");
   }
 };
+
+console.log("heybye");
